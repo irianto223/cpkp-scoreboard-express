@@ -8,7 +8,15 @@ var mongoose = require('mongoose')
 var cors = require('cors')
 const adminHelper = require('./helpers/admin')
 
-mongoose.connect(`mongodb://localhost/rekap-cpkp`)
+// mongoose.connect(`mongodb://localhost/rekap-cpkp`)
+mongoose.connect(`mongodb://irianto223:anak223@cluster0-shard-00-00-kgsxm.mongodb.net:27017,cluster0-shard-00-01-kgsxm.mongodb.net:27017,cluster0-shard-00-02-kgsxm.mongodb.net:27017/scoreboard?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin
+`, (err, resolve) => {
+  if (err) {
+    console.log(`MongoDB err: ${err}`);
+  } else {
+    console.log(resolve);
+  }
+})
 
 var index = require('./routes/index');
 var users = require('./routes/users');
