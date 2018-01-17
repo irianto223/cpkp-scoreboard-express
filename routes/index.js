@@ -4,7 +4,7 @@ const userController = require('../controllers/userController')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.send({ message: 'it works! '});
 });
 
 router.post('/login', userController.login)
